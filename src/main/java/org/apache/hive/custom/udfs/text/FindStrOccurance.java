@@ -23,7 +23,7 @@ public class FindStrOccurance extends UDF {
     public Integer evaluate(final String word, final String search_word){
 
         if(word == null || search_word == null) {
-            return 0;
+            return new Integer(0);
         }
 
         int number_of_occurances = StringUtils.countMatches(word,search_word);

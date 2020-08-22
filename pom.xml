@@ -6,7 +6,7 @@
 
     <groupId>org.apache.hive.custom.udfs</groupId>
     <artifactId>hive-custom-udfs</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <properties>

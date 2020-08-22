@@ -1,2 +1,4 @@
-# hive-find-str-occurance
-This is a custom Apache Hive function that will be count the total number of occurrence of a character in a string.
+# HIVE CUSTOM UDFS
+### This is the list of custom user-defined-functions created for Apache Hive.
+
+[![Build Status](https://travis-ci.org/rishuatgithub/hive-custom-udfs.svg?branch=master)](https://travis-ci.org/rishuatgithub/hive-custom-udfs)

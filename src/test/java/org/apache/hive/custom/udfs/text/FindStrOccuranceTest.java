@@ -1,5 +1,6 @@
 package org.apache.hive.custom.udfs.text;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -11,7 +12,12 @@ import static org.junit.Assert.*;
  */
 public class FindStrOccuranceTest {
 
-    FindStrOccurance findStrOccurance = new FindStrOccurance();
+    private FindStrOccurance findStrOccurance;
+
+    @Before
+    public void setup(){
+        findStrOccurance = new FindStrOccurance();
+    }
 
     @Test
     public void testEvaluate(){

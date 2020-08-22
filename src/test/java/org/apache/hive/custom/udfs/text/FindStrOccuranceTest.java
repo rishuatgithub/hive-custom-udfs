@@ -21,23 +21,23 @@ public class FindStrOccuranceTest {
 
     @Test
     public void testEvaluate(){
-        int count1 = findStrOccurance.evaluate("Hello This is a test function","is");
-        assertEquals(2, count1);
+        Integer count1 = findStrOccurance.evaluate("Hello This is a test function","is");
+        assertEquals(new Integer(2), count1);
 
-        int count2 = findStrOccurance.evaluate("hive@org@apache@.com","@");
-        assertEquals(3, count2);
+        Integer count2 = findStrOccurance.evaluate("hive@org@apache@.com","@");
+        assertEquals(new Integer(3), count2);
 
-        int count3 = findStrOccurance.evaluate("hive","hive2");
-        assertEquals(0, count3);
+        Integer count3 = findStrOccurance.evaluate("hive","hive2");
+        assertEquals(new Integer(0), count3);
 
-        int count4 = findStrOccurance.evaluate("null","is");
-        assertEquals(0, count4);
+        Integer count4 = findStrOccurance.evaluate("null","is");
+        assertEquals(new Integer(0), count4);
 
-        int count5 = findStrOccurance.evaluate("null","null");
-        assertEquals(1, count5);
+        Integer count5 = findStrOccurance.evaluate("null","null");
+        assertEquals(new Integer(1), count5);
 
-        int count6 = findStrOccurance.evaluate("hive custom udfs","null");
-        assertEquals(0, count6);
+        Integer count6 = findStrOccurance.evaluate("hive custom udfs","null");
+        assertEquals(new Integer(0), count6);
 
     }
 

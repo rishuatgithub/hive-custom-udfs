@@ -11,5 +11,6 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY_ID
     secret_access_key: $AWS_SECRET_ACCESS_KEY
     bucket: hive-custom-udfs
+    upload-dir: v1.0.0
     skip_cleanup: true
     acl: public_read

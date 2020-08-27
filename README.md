@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/rishuatgithub/hive-custom-udfs.svg?branch=master)](https://travis-ci.org/rishuatgithub/hive-custom-udfs) 
 [![codecov](https://codecov.io/gh/rishuatgithub/hive-custom-udfs/branch/master/graph/badge.svg)](https://codecov.io/gh/rishuatgithub/hive-custom-udfs) 
-[![HitCount](http://hits.dwyl.com/rishuatgithub/hive-custom-udfs.svg)](http://hits.dwyl.com/rishuatgithub/hive-custom-udfs)
+<!-- [![HitCount](http://hits.dwyl.com/rishuatgithub/hive-custom-udfs.svg)](http://hits.dwyl.com/rishuatgithub/hive-custom-udfs) -->
 
 ## Introduction
 
@@ -22,7 +22,7 @@ The idea is to solve the work-around-solutions in apache hive UDFs and create a 
 Below are the list of currently available plugins. Click on the below urls to learn more.
 
 - [Find total occurance of a word/character in a sentence](https://github.com/rishuatgithub/hive-custom-udfs/wiki/Find-total-occurance-of-a-word-character-in-a-sentence)
-- [Find days between two dates excluding weekends](https://github.com/rishuatgithub/hive-custom-udfs/wiki/Find-days-between-two-dates-excluding-weekends)
+- [Find total days minus the weekends between two dates](https://github.com/rishuatgithub/hive-custom-udfs/wiki/Find-total-days-minus-the-weekends-between-two-dates)
 
 ## General Usage
 

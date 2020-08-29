@@ -24,7 +24,7 @@ import java.util.Calendar;
 )
 public class DateDiffminusWeekends extends UDF {
 
-    public Integer getdatediff(String d1, String d2){
+    public Integer evaluate(String d1, String d2){
 
         if(d1 == null || d2 == null){
             return null;

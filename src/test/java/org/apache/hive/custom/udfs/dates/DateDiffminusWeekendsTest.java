@@ -21,32 +21,32 @@ public class DateDiffminusWeekendsTest {
 
     @Test
     public void finddatediff_basic(){
-        Assert.assertEquals(new Integer(5),dateDiffminusWeekends.getdatediff("2020-08-28","2020-08-22"));
+        Assert.assertEquals(new Integer(5),dateDiffminusWeekends.evaluate("2020-08-28","2020-08-22"));
     }
 
     @Test
     public void finddatediff_validedates(){
-        Assert.assertEquals(null,dateDiffminusWeekends.getdatediff("2020-08-28","2020-09-01"));
+        Assert.assertEquals(null,dateDiffminusWeekends.evaluate("2020-08-28","2020-09-01"));
     }
 
     @Test
     public void finddatediff_validedates2(){
-        Assert.assertEquals(null,dateDiffminusWeekends.getdatediff(null,"2020-09-01"));
+        Assert.assertEquals(null,dateDiffminusWeekends.evaluate(null,"2020-09-01"));
     }
 
     @Test
     public void finddatediff_validedates3(){
-        Assert.assertEquals(null,dateDiffminusWeekends.getdatediff("01-Jan-2020","2020-09-01"));
+        Assert.assertEquals(null,dateDiffminusWeekends.evaluate("01-Jan-2020","2020-09-01"));
     }
 
     @Test
     public void finddatediff_validedates4(){
-        Assert.assertNull(dateDiffminusWeekends.getdatediff(null,null));
+        Assert.assertNull(dateDiffminusWeekends.evaluate(null,null));
     }
 
     @Test
     public void finddatediff_samedays(){
-        Assert.assertEquals(new Integer(1),dateDiffminusWeekends.getdatediff("2020-09-01","2020-09-01"));
+        Assert.assertEquals(new Integer(1),dateDiffminusWeekends.evaluate("2020-09-01","2020-09-01"));
     }
 
 }

@@ -23,6 +23,7 @@ Below are the list of currently available plugins. Click on the below urls to le
 
 - [Find total occurance of a word/character in a sentence](https://github.com/rishuatgithub/hive-custom-udfs/wiki/Find-total-occurance-of-a-word-character-in-a-sentence)
 - [Find total days minus the weekends between two dates](https://github.com/rishuatgithub/hive-custom-udfs/wiki/Find-total-days-minus-the-weekends-between-two-dates)
+- [Parse XML data using XPATH](https://github.com/rishuatgithub/hive-custom-udfs/wiki/XML-Parser-to-parse-XML-data-based-on-Path)
 
 ## General Usage
 

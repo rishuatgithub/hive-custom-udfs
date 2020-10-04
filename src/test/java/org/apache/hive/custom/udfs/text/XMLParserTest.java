@@ -16,7 +16,7 @@ import java.util.List;
 public class XMLParserTest {
 
     private XMLParser xmlParser;
-    String testdata = null;
+    String testdata = null, malformed_testdata=null;
 
     @Before
     public void setup(){
@@ -43,7 +43,28 @@ public class XMLParserTest {
                 "      <nickname>Jazz</nickname>\n" +
                 "      <marks>90</marks>\n" +
                 "   </student>\n" +
+                "   <student rollno = \"999\">\n" +
+                "      <firstname>XYZ</firstname>\n" +
+                "      <lastname>PPPP</lastname>\n" +
+                "      <marks>90</marks>\n" +
+                "   </student>\n" +
                 "</class>";
+
+        malformed_testdata = "<?xml version = \"1.0\"?>\n" +
+                "<class>\n" +
+                "   <student rollno = \"393\">\n" +
+                "      <firstname>Dinkar</firstname>\n" +
+                "      <lastname>Kad</lastname>\n" +
+                "      <nickname>Dinkar</nickname>\n" +
+                "      <marks>85</marks>\n" +
+                "   </student>\n" +
+                "   \n" +
+                "   <student rollno = \"493\">\n" +
+                "      <firstname>Vineet</firstname>\n" +
+                "      <lastname>Gupta</lastname>\n" +
+                "      <nickname>Vinni</nickname>\n" +
+                "      <marks>95</marks>\n";
+
     }
 
     @Test
@@ -62,6 +83,7 @@ public class XMLParserTest {
         expected_output.add("393");
         expected_output.add("493");
         expected_output.add("593");
+        expected_output.add("999");
 
         Assert.assertEquals(expected_output,xmlParser.evaluate(testdata,"/class/student/@rollno"));
     }
@@ -72,6 +94,7 @@ public class XMLParserTest {
         expected_output.add("Dinkar");
         expected_output.add("Vineet");
         expected_output.add("Jasvir");
+        expected_output.add("XYZ");
 
         Assert.assertEquals(expected_output,xmlParser.evaluate(testdata,"/class/student/firstname/text()"));
     }
@@ -82,6 +105,21 @@ public class XMLParserTest {
         expected_output.add("95");
 
         Assert.assertEquals(expected_output,xmlParser.evaluate(testdata,"/class/student[firstname='Vineet']/marks/text()"));
+    }
+
+    @Test
+    public void testmissingattribute_returnNull_nickname_missing(){
+        List<String> expected_output = new ArrayList<>();
+        expected_output.add("Dinkar");
+        expected_output.add("Vinni");
+        expected_output.add("Jazz");
+
+        Assert.assertEquals(expected_output,xmlParser.evaluate(testdata,"/class/student/nickname/text()"));
+    }
+
+    @Test
+    public void malformedXMLtest(){
+        Assert.assertNull(xmlParser.evaluate(malformed_testdata,"/class/student/@rollno"));
     }
 
 

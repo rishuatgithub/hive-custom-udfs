@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
  * Test case for the FindStrOccurance Hive UDF Function
  *
  * @Author: rishu shrivastava
- * @LastUpdated: Aug 22, 2020
+ * @LastUpdated: Aug 29, 2020
  */
 public class FindStrOccuranceTest {
 
@@ -20,25 +20,38 @@ public class FindStrOccuranceTest {
     }
 
     @Test
-    public void testEvaluate(){
-        Integer count1 = findStrOccurance.evaluate("Hello This is a test function","is");
-        assertEquals(new Integer(2), count1);
+    public void testEvaluate_basic(){
+        assertEquals(new Integer(2), findStrOccurance.evaluate("Hello This is a test function","is"));
+    }
 
-        Integer count2 = findStrOccurance.evaluate("hive@org@apache@.com","@");
-        assertEquals(new Integer(3), count2);
+    @Test
+    public void testEvaluate_basic2(){
+        assertEquals(new Integer(3), findStrOccurance.evaluate("hive@org@apache@.com","@"));
+    }
 
-        Integer count3 = findStrOccurance.evaluate("hive","hive2");
-        assertEquals(new Integer(0), count3);
+    @Test
+    public void testEvaluate_basic3(){
+        assertEquals(new Integer(1), findStrOccurance.evaluate("hive@org@apache@.com",".com"));
+    }
 
-        Integer count4 = findStrOccurance.evaluate("null","is");
-        assertEquals(new Integer(0), count4);
+    @Test
+    public void testEvaluate_validate(){
+        assertEquals(new Integer(0), findStrOccurance.evaluate("hive","hive2"));
+    }
 
-        Integer count5 = findStrOccurance.evaluate("null","null");
-        assertEquals(new Integer(1), count5);
+    @Test
+    public void testEvaluate_validate2(){
+        assertNull(findStrOccurance.evaluate(null,"is"));
+    }
 
-        Integer count6 = findStrOccurance.evaluate("hive custom udfs","null");
-        assertEquals(new Integer(0), count6);
+    @Test
+    public void testEvaluate_validate3(){
+        assertNull(findStrOccurance.evaluate(null,null));
+    }
 
+    @Test
+    public void testEvaluate_validate4(){
+        assertNull(findStrOccurance.evaluate("hive custom udfs",null));
     }
 
 }
